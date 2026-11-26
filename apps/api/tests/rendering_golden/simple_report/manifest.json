@@ -1,0 +1,51 @@
+{
+  "fixture": "simple_report.docx",
+  "input_sha256": "e48881bd516574bcb9a74c1dd2086f423ed504fb6f389c2f25d2710014589b4a",
+  "output_pdf_sha256": "fb390fc0812cd6ae78cd1051d54901e40b6c32ef682fc8d642d8e0ac655d1f03",
+  "page_count": 1,
+  "page_dimensions_mm": [
+    [
+      215.9,
+      279.4
+    ]
+  ],
+  "page_image_sha256": [
+    "859e169e4c298bc3e242a0d4eac7595292553d8bd15bff184a61dffc52ffceb6"
+  ],
+  "normalized_text_by_page": [
+    "This is a body paragraph. Chapter 1: Introduction This is an introductory paragraph under Chapter 1. Chapter 2: Methodology This is a methodology paragraph. 2.1 Experimental Setup Details of the experimental setup."
+  ],
+  "has_blank_pages": false,
+  "worker_result": {
+    "job_id": "1f5ea380277e47a188ce18b352ef9b79",
+    "status": "succeeded",
+    "source_docx_checksum": "e48881bd516574bcb9a74c1dd2086f423ed504fb6f389c2f25d2710014589b4a",
+    "output_pdf_path": "/work/job/input.pdf",
+    "page_count": 1,
+    "page_dimensions_mm": [
+      [
+        215.9,
+        279.4
+      ]
+    ],
+    "has_blank_pages": false,
+    "error": null,
+    "worker_version": "0.1.0",
+    "duration_seconds": 3.8028
+  },
+  "image": "vtu-report-studio-renderer:doc0021",
+  "image_id": "sha256:77f3ed444ba9988d1069013acb7081a2e7e9997c120d994d4e8dcd3295d1c561",
+  "libreoffice_package_version": "4:25.2.3-2+deb13u12",
+  "base_image_digest": "sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b",
+  "security_flags": {
+    "network": "none",
+    "read_only_root": true,
+    "input_mount": "read-only",
+    "capabilities_dropped": "ALL",
+    "no_new_privileges": true,
+    "memory": "512m",
+    "cpus": 1,
+    "pids_limit": 128,
+    "private_tmpfs": "64m"
+  }
+}

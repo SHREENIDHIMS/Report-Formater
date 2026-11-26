@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "document_id": "example-document-id",
+  "template": {
+    "id": "vtu-be-btech-final-year-project-report",
+    "version": "0.1.0",
+    "status": "research-draft"
+  },
+  "metadata": {
+    "project_title": "Student supplied project title",
+    "university": "Visvesvaraya Technological University",
+    "course": "BE",
+    "branch": "CSE",
+    "scheme": null,
+    "academic_year": "2025-26",
+    "college_name": null,
+    "student_names": [],
+    "usns": [],
+    "guide_name": null
+  },
+  "sections": [
+    {
+      "id": "section-abstract",
+      "kind": "abstract",
+      "title": "Abstract",
+      "required": true,
+      "children": [
+        {
+          "id": "block-abstract-1",
+          "kind": "paragraph",
+          "text": "Student-authored abstract goes here.",
+          "style_token": "body",
+          "source_provenance": null
+        }
+      ]
+    },
+    {
+      "id": "section-chapter-1",
+      "kind": "chapter",
+      "title": "Introduction",
+      "number": "1",
+      "required": true,
+      "children": [
+        {
+          "id": "block-heading-1-1",
+          "kind": "heading",
+          "level": 2,
+          "title": "Background",
+          "number": "1.1",
+          "style_token": "section_heading"
+        },
+        {
+          "id": "block-paragraph-1",
+          "kind": "paragraph",
+          "text": "Student-authored project description goes here.",
+          "style_token": "body"
+        },
+        {
+          "id": "block-table-1",
+          "kind": "table",
+          "caption": "Table 1.1: Example data table",
+          "rows": [["Column A", "Column B"], ["Value A", "Value B"]]
+        },
+        {
+          "id": "block-figure-1",
+          "kind": "image",
+          "asset_id": "private-asset-id",
+          "caption": "Figure 1.1: Student supplied figure",
+          "alt_text": "Description supplied by student"
+        }
+      ]
+    }
+  ],
+  "assets": [],
+  "provenance": {
+    "source_document_version_id": null,
+    "importer_version": null,
+    "created_by": "manual"
+  }
+}

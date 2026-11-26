@@ -1,0 +1,51 @@
+{
+  "fixture": "headers_footers_report.docx",
+  "input_sha256": "496460c07130f3451e903f8384a2819e5600cce0416ccd8805f097304e6dbf0a",
+  "output_pdf_sha256": "2f96b27faae26d736f14d1750b0f1c5c9192e2b16717676391e7468fa3334ec1",
+  "page_count": 1,
+  "page_dimensions_mm": [
+    [
+      215.9,
+      279.4
+    ]
+  ],
+  "page_image_sha256": [
+    "613922810dc684454da89831e693a141964af7df8928618d291f99ccc7b85568"
+  ],
+  "normalized_text_by_page": [
+    "VTU Report Studio — Golden Header Page 1 Headers and Footers Body content block 1. Body content block 2. Body content block 3."
+  ],
+  "has_blank_pages": false,
+  "worker_result": {
+    "job_id": "5981633b8a3a4d8588fbddac8f30f61f",
+    "status": "succeeded",
+    "source_docx_checksum": "496460c07130f3451e903f8384a2819e5600cce0416ccd8805f097304e6dbf0a",
+    "output_pdf_path": "/work/job/input.pdf",
+    "page_count": 1,
+    "page_dimensions_mm": [
+      [
+        215.9,
+        279.4
+      ]
+    ],
+    "has_blank_pages": false,
+    "error": null,
+    "worker_version": "0.1.0",
+    "duration_seconds": 3.8007
+  },
+  "image": "vtu-report-studio-renderer:doc0021",
+  "image_id": "sha256:77f3ed444ba9988d1069013acb7081a2e7e9997c120d994d4e8dcd3295d1c561",
+  "libreoffice_package_version": "4:25.2.3-2+deb13u12",
+  "base_image_digest": "sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b",
+  "security_flags": {
+    "network": "none",
+    "read_only_root": true,
+    "input_mount": "read-only",
+    "capabilities_dropped": "ALL",
+    "no_new_privileges": true,
+    "memory": "512m",
+    "cpus": 1,
+    "pids_limit": 128,
+    "private_tmpfs": "64m"
+  }
+}

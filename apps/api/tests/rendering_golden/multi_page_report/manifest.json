@@ -1,0 +1,161 @@
+{
+  "fixture": "multi_page_report.docx",
+  "input_sha256": "240cf5981f5282ac7c9cf45951fb488b729a9a016739bc1e097669eae2c22525",
+  "output_pdf_sha256": "9bc48a5d86f14b35a36f24c32ac1648b77d630d6afc1d023a7b0a34261b59d09",
+  "page_count": 12,
+  "page_dimensions_mm": [
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ]
+  ],
+  "page_image_sha256": [
+    "dc44ae7f1c39d91e11ecf56441597c288494da04e6ead049e483b1c3a686c3c1",
+    "6f941a2cb88b371582ac827fd4e631328ed04bae492acd1bffbddb3540761177",
+    "25181305e9682d3c40eb1cfe480259be06301db9fd1f8f85b06d567fd2d513f4",
+    "f5fec950c68eccdae241f7316c5a8dd2368ddbd5e9b6919ef3c880349396af35",
+    "74536730479daab96eeb9066003c775adb2f3486db03c0fbbcf5bcc31e145257",
+    "03f8be0f6e87d3cdde7b2c87b47bc4ca9ff6a53080a4d132a9534de824a5bd4d",
+    "c7cd4ba13ee434d148f5c6dced4b11c99596bc22ee839ca92edcf887d1a0ad11",
+    "de8a583e814c5efdae7a2cafabe6ea23c2daa73484d0d6cf64dd74a4c3dd89f5",
+    "4c14a50dbe7995b4dde898583232a33716a70734e9a7843d019d30a19549844a",
+    "6730f9444b28a24ab4a1be5e5e51f4e82aa2e90090b331971ea9a3db554698d4",
+    "9d8ddf3e50b8d4a5cd4569e87fd16571becfa332783a17702ac9e90f85a46837",
+    "8cabdca6bd34099798385dfad28c65faacdca74dd6c1d8d3ffbb538c1cd5c9e0"
+  ],
+  "normalized_text_by_page": [
+    "VTU Report Studio — Golden Header Page 1 Multi-page Report Section 1 Page content 1.1: This repeated sentence provides stable text for golden extraction. Page content 1.2: This repeated sentence provides stable text for golden extraction. Page content 1.3: This repeated sentence provides stable text for golden extraction. Page content 1.4: This repeated sentence provides stable text for golden extraction. Page content 1.5: This repeated sentence provides stable text for golden extraction. Page content 1.6: This repeated sentence provides stable text for golden extraction. Page content 1.7: This repeated sentence provides stable text for golden extraction. Page content 1.8: This repeated sentence provides stable text for golden extraction.",
+    "VTU Report Studio — Golden Header Page 2 Section 2 Page content 2.1: This repeated sentence provides stable text for golden extraction. Page content 2.2: This repeated sentence provides stable text for golden extraction. Page content 2.3: This repeated sentence provides stable text for golden extraction. Page content 2.4: This repeated sentence provides stable text for golden extraction. Page content 2.5: This repeated sentence provides stable text for golden extraction. Page content 2.6: This repeated sentence provides stable text for golden extraction. Page content 2.7: This repeated sentence provides stable text for golden extraction. Page content 2.8: This repeated sentence provides stable text for golden extraction.",
+    "VTU Report Studio — Golden Header Page 3 Section 3 Page content 3.1: This repeated sentence provides stable text for golden extraction. Page content 3.2: This repeated sentence provides stable text for golden extraction. Page content 3.3: This repeated sentence provides stable text for golden extraction. Page content 3.4: This repeated sentence provides stable text for golden extraction. Page content 3.5: This repeated sentence provides stable text for golden extraction. Page content 3.6: This repeated sentence provides stable text for golden extraction. Page content 3.7: This repeated sentence provides stable text for golden extraction. Page content 3.8: This repeated sentence provides stable text for golden extraction.",
+    "VTU Report Studio — Golden Header Page 4 Section 4 Page content 4.1: This repeated sentence provides stable text for golden extraction. Page content 4.2: This repeated sentence provides stable text for golden extraction. Page content 4.3: This repeated sentence provides stable text for golden extraction. Page content 4.4: This repeated sentence provides stable text for golden extraction. Page content 4.5: This repeated sentence provides stable text for golden extraction. Page content 4.6: This repeated sentence provides stable text for golden extraction. Page content 4.7: This repeated sentence provides stable text for golden extraction. Page content 4.8: This repeated sentence provides stable text for golden extraction.",
+    "VTU Report Studio — Golden Header Page 5 Section 5 Page content 5.1: This repeated sentence provides stable text for golden extraction. Page content 5.2: This repeated sentence provides stable text for golden extraction. Page content 5.3: This repeated sentence provides stable text for golden extraction. Page content 5.4: This repeated sentence provides stable text for golden extraction. Page content 5.5: This repeated sentence provides stable text for golden extraction. Page content 5.6: This repeated sentence provides stable text for golden extraction. Page content 5.7: This repeated sentence provides stable text for golden extraction. Page content 5.8: This repeated sentence provides stable text for golden extraction.",
+    "VTU Report Studio — Golden Header Page 6 Section 6 Page content 6.1: This repeated sentence provides stable text for golden extraction. Page content 6.2: This repeated sentence provides stable text for golden extraction. Page content 6.3: This repeated sentence provides stable text for golden extraction. Page content 6.4: This repeated sentence provides stable text for golden extraction. Page content 6.5: This repeated sentence provides stable text for golden extraction. Page content 6.6: This repeated sentence provides stable text for golden extraction. Page content 6.7: This repeated sentence provides stable text for golden extraction. Page content 6.8: This repeated sentence provides stable text for golden extraction.",
+    "VTU Report Studio — Golden Header Page 7 Section 7 Page content 7.1: This repeated sentence provides stable text for golden extraction. Page content 7.2: This repeated sentence provides stable text for golden extraction. Page content 7.3: This repeated sentence provides stable text for golden extraction. Page content 7.4: This repeated sentence provides stable text for golden extraction. Page content 7.5: This repeated sentence provides stable text for golden extraction. Page content 7.6: This repeated sentence provides stable text for golden extraction. Page content 7.7: This repeated sentence provides stable text for golden extraction. Page content 7.8: This repeated sentence provides stable text for golden extraction.",
+    "VTU Report Studio — Golden Header Page 8 Section 8 Page content 8.1: This repeated sentence provides stable text for golden extraction. Page content 8.2: This repeated sentence provides stable text for golden extraction. Page content 8.3: This repeated sentence provides stable text for golden extraction. Page content 8.4: This repeated sentence provides stable text for golden extraction. Page content 8.5: This repeated sentence provides stable text for golden extraction. Page content 8.6: This repeated sentence provides stable text for golden extraction. Page content 8.7: This repeated sentence provides stable text for golden extraction. Page content 8.8: This repeated sentence provides stable text for golden extraction.",
+    "VTU Report Studio — Golden Header Page 9 Section 9 Page content 9.1: This repeated sentence provides stable text for golden extraction. Page content 9.2: This repeated sentence provides stable text for golden extraction. Page content 9.3: This repeated sentence provides stable text for golden extraction. Page content 9.4: This repeated sentence provides stable text for golden extraction. Page content 9.5: This repeated sentence provides stable text for golden extraction. Page content 9.6: This repeated sentence provides stable text for golden extraction. Page content 9.7: This repeated sentence provides stable text for golden extraction. Page content 9.8: This repeated sentence provides stable text for golden extraction.",
+    "VTU Report Studio — Golden Header Page 10 Section 10 Page content 10.1: This repeated sentence provides stable text for golden extraction. Page content 10.2: This repeated sentence provides stable text for golden extraction. Page content 10.3: This repeated sentence provides stable text for golden extraction. Page content 10.4: This repeated sentence provides stable text for golden extraction. Page content 10.5: This repeated sentence provides stable text for golden extraction. Page content 10.6: This repeated sentence provides stable text for golden extraction. Page content 10.7: This repeated sentence provides stable text for golden extraction. Page content 10.8: This repeated sentence provides stable text for golden extraction.",
+    "VTU Report Studio — Golden Header Page 11 Section 11 Page content 11.1: This repeated sentence provides stable text for golden extraction. Page content 11.2: This repeated sentence provides stable text for golden extraction. Page content 11.3: This repeated sentence provides stable text for golden extraction. Page content 11.4: This repeated sentence provides stable text for golden extraction. Page content 11.5: This repeated sentence provides stable text for golden extraction. Page content 11.6: This repeated sentence provides stable text for golden extraction. Page content 11.7: This repeated sentence provides stable text for golden extraction. Page content 11.8: This repeated sentence provides stable text for golden extraction.",
+    "VTU Report Studio — Golden Header Page 12 Section 12 Page content 12.1: This repeated sentence provides stable text for golden extraction. Page content 12.2: This repeated sentence provides stable text for golden extraction. Page content 12.3: This repeated sentence provides stable text for golden extraction. Page content 12.4: This repeated sentence provides stable text for golden extraction. Page content 12.5: This repeated sentence provides stable text for golden extraction. Page content 12.6: This repeated sentence provides stable text for golden extraction. Page content 12.7: This repeated sentence provides stable text for golden extraction. Page content 12.8: This repeated sentence provides stable text for golden extraction."
+  ],
+  "has_blank_pages": false,
+  "worker_result": {
+    "job_id": "e5f45cfdce6141a5a2878480ce23ee6d",
+    "status": "succeeded",
+    "source_docx_checksum": "240cf5981f5282ac7c9cf45951fb488b729a9a016739bc1e097669eae2c22525",
+    "output_pdf_path": "/work/job/input.pdf",
+    "page_count": 12,
+    "page_dimensions_mm": [
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ]
+    ],
+    "has_blank_pages": false,
+    "error": null,
+    "worker_version": "0.1.0",
+    "duration_seconds": 3.9392
+  },
+  "image": "vtu-report-studio-renderer:doc0021",
+  "image_id": "sha256:77f3ed444ba9988d1069013acb7081a2e7e9997c120d994d4e8dcd3295d1c561",
+  "libreoffice_package_version": "4:25.2.3-2+deb13u12",
+  "base_image_digest": "sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b",
+  "security_flags": {
+    "network": "none",
+    "read_only_root": true,
+    "input_mount": "read-only",
+    "capabilities_dropped": "ALL",
+    "no_new_privileges": true,
+    "memory": "512m",
+    "cpus": 1,
+    "pids_limit": 128,
+    "private_tmpfs": "64m"
+  }
+}

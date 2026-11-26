@@ -1,0 +1,44 @@
+VTU REPORT STUDIO STARTER KIT — FILE INDEX
+
+START HERE
+- README.md
+- AGENTS.md
+- CLAUDE.md
+
+PRODUCT & UX
+- docs/00-product-brief.md
+- docs/01-product-requirements-document.md
+- docs/02-market-and-business-model.md
+- docs/03-user-flows-and-ui-spec.md
+
+ENGINEERING
+- docs/04-architecture-and-tech-stack.md
+- docs/05-document-engine-design.md
+- docs/07-template-schema-and-rule-model.md
+- docs/08-data-model.md
+- docs/09-api-contract.md
+- docs/10-security-and-privacy.md
+- docs/11-payments-and-entitlements.md
+- docs/12-testing-and-quality-plan.md
+
+VTU TEMPLATE RESEARCH
+- docs/06-vtu-guideline-baseline.md
+- templates/vtu/be-btech-project-report/manifest.yaml
+- templates/vtu/be-btech-project-report/rules.yaml
+- docs/18-research-sources.md
+
+BUILD PLAN / RISK
+- docs/13-roadmap-and-backlog.md
+- docs/14-agent-implementation-plan.md
+- docs/15-architecture-decision-records.md
+- docs/16-deployment-and-operations.md
+- docs/17-open-questions-and-risks.md
+
+RUNNABLE SCAFFOLD
+- apps/web/ : Next.js landing page starter
+- apps/api/ : FastAPI health endpoint + test
+- compose.yaml : local Postgres + Redis
+- .env.example : local environment variable template
+- .github/workflows/ci.yml : CI starting point
+
+The product is not implemented end-to-end. See README.md for implemented vs planned features.

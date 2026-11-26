@@ -1,0 +1,61 @@
+{
+  "fixture": "section_break_report.docx",
+  "input_sha256": "0d42efe68a6de31622f385eee73aba3b6c2e884e13bfb69b3dabc974300c5434",
+  "output_pdf_sha256": "05e9b8da78d25228b35a6554db05ec73a16cc53b5a74bbdae846303a22832d39",
+  "page_count": 2,
+  "page_dimensions_mm": [
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ]
+  ],
+  "page_image_sha256": [
+    "86131cbd957af25aa8e306a9c8506f05d063ca52ea5dcbe19bb42ce710d7f3c4",
+    "b3f0f5772a3060cc50c6f35faa3df22513c5ffba30fe82e7fae68ebf2a741a5f"
+  ],
+  "normalized_text_by_page": [
+    "Page Before section break.",
+    "Page After section break (new page). This should have different margins if configured."
+  ],
+  "has_blank_pages": false,
+  "worker_result": {
+    "job_id": "b33302dd6ecc48909b966ac99d6e2a10",
+    "status": "succeeded",
+    "source_docx_checksum": "0d42efe68a6de31622f385eee73aba3b6c2e884e13bfb69b3dabc974300c5434",
+    "output_pdf_path": "/work/job/input.pdf",
+    "page_count": 2,
+    "page_dimensions_mm": [
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ]
+    ],
+    "has_blank_pages": false,
+    "error": null,
+    "worker_version": "0.1.0",
+    "duration_seconds": 3.8474
+  },
+  "image": "vtu-report-studio-renderer:doc0021",
+  "image_id": "sha256:77f3ed444ba9988d1069013acb7081a2e7e9997c120d994d4e8dcd3295d1c561",
+  "libreoffice_package_version": "4:25.2.3-2+deb13u12",
+  "base_image_digest": "sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b",
+  "security_flags": {
+    "network": "none",
+    "read_only_root": true,
+    "input_mount": "read-only",
+    "capabilities_dropped": "ALL",
+    "no_new_privileges": true,
+    "memory": "512m",
+    "cpus": 1,
+    "pids_limit": 128,
+    "private_tmpfs": "64m"
+  }
+}

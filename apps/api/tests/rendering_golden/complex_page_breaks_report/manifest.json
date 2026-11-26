@@ -1,0 +1,71 @@
+{
+  "fixture": "complex_page_breaks_report.docx",
+  "input_sha256": "a6086a3b818929cf8c47bc97d81fdabd9652d7c42b8533b96ec9689966d70abb",
+  "output_pdf_sha256": "5733111c0bcfb3368dc2d801eea9bf9a8d80ab9340e1d7e9b1bcde37fbf27aee",
+  "page_count": 3,
+  "page_dimensions_mm": [
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ],
+    [
+      215.9,
+      279.4
+    ]
+  ],
+  "page_image_sha256": [
+    "15414eb53767084334f9e83a5a08fac11be6c1a246050be83cda290fd1e940b4",
+    "4aa67eafb5d3abe412ba33549b0720ec848f15d8c7918e717c9aaed46bc2b1c4",
+    "262ce315ee16ff6af0e241b73c4fbb1c013c900400cd5446e865f6a460aae2fd"
+  ],
+  "normalized_text_by_page": [
+    "VTU Report Studio — Golden Header Page 1 Complex Page Breaks Before the first explicit break.",
+    "VTU Report Studio — Golden Header Page 2 After a manual page break.",
+    "VTU Report Studio — Golden Header Page 3 After a new-page section break. After a continuous section break. A paragraph with a run break and a second line."
+  ],
+  "has_blank_pages": false,
+  "worker_result": {
+    "job_id": "d504ebf454b04812960987cca42200d6",
+    "status": "succeeded",
+    "source_docx_checksum": "a6086a3b818929cf8c47bc97d81fdabd9652d7c42b8533b96ec9689966d70abb",
+    "output_pdf_path": "/work/job/input.pdf",
+    "page_count": 3,
+    "page_dimensions_mm": [
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ],
+      [
+        215.9,
+        279.4
+      ]
+    ],
+    "has_blank_pages": false,
+    "error": null,
+    "worker_version": "0.1.0",
+    "duration_seconds": 4.0363
+  },
+  "image": "vtu-report-studio-renderer:doc0021",
+  "image_id": "sha256:77f3ed444ba9988d1069013acb7081a2e7e9997c120d994d4e8dcd3295d1c561",
+  "libreoffice_package_version": "4:25.2.3-2+deb13u12",
+  "base_image_digest": "sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b",
+  "security_flags": {
+    "network": "none",
+    "read_only_root": true,
+    "input_mount": "read-only",
+    "capabilities_dropped": "ALL",
+    "no_new_privileges": true,
+    "memory": "512m",
+    "cpus": 1,
+    "pids_limit": 128,
+    "private_tmpfs": "64m"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "fixture": "tables_images_report.docx",
+  "input_sha256": "cfee5ab9ff0c5b641c6359c9bd789dccf3191cd3c3d773f1bc8e331af309c45e",
+  "output_pdf_sha256": "e7b5cb9dc619177071f8280702da5a5ea471e6ac3d8836606b9d9ba926ab2374",
+  "page_count": 1,
+  "page_dimensions_mm": [
+    [
+      215.9,
+      279.4
+    ]
+  ],
+  "page_image_sha256": [
+    "b5890f09f5164e74908a4e7daddd0e0aff5159d3278b7763ded280f964ad9b57"
+  ],
+  "normalized_text_by_page": [
+    "Tables and Images A representative table and an embedded image. Cell 1,1 Cell 1,2 Cell 1,3 Cell 2,1 Cell 2,2 Cell 2,3 Cell 3,1 Cell 3,2 Cell 3,3 Cell 4,1 Cell 4,2 Cell 4,3 Figure 1: Embedded image fixture."
+  ],
+  "has_blank_pages": false,
+  "worker_result": {
+    "job_id": "6181924ba2c34d40aede4abbeed41a90",
+    "status": "succeeded",
+    "source_docx_checksum": "cfee5ab9ff0c5b641c6359c9bd789dccf3191cd3c3d773f1bc8e331af309c45e",
+    "output_pdf_path": "/work/job/input.pdf",
+    "page_count": 1,
+    "page_dimensions_mm": [
+      [
+        215.9,
+        279.4
+      ]
+    ],
+    "has_blank_pages": false,
+    "error": null,
+    "worker_version": "0.1.0",
+    "duration_seconds": 3.6747
+  },
+  "image": "vtu-report-studio-renderer:doc0021",
+  "image_id": "sha256:77f3ed444ba9988d1069013acb7081a2e7e9997c120d994d4e8dcd3295d1c561",
+  "libreoffice_package_version": "4:25.2.3-2+deb13u12",
+  "base_image_digest": "sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b",
+  "security_flags": {
+    "network": "none",
+    "read_only_root": true,
+    "input_mount": "read-only",
+    "capabilities_dropped": "ALL",
+    "no_new_privileges": true,
+    "memory": "512m",
+    "cpus": 1,
+    "pids_limit": 128,
+    "private_tmpfs": "64m"
+  }
+}

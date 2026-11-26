@@ -1,0 +1,51 @@
+{
+  "fixture": "table_img_report.docx",
+  "input_sha256": "ca838f75e785df75a3b203aefa329ddc717f72894083efc8de1c4edb3ce486cb",
+  "output_pdf_sha256": "982585cd6e5f4c056230d66c89ba5546289bc586f2eb5c07669e96f93f3569d6",
+  "page_count": 1,
+  "page_dimensions_mm": [
+    [
+      215.9,
+      279.4
+    ]
+  ],
+  "page_image_sha256": [
+    "b0fd7e275caa6da9f2cf29d2d56d9e2cb3034960e42ff9c00f21c0e00be34c62"
+  ],
+  "normalized_text_by_page": [
+    "Report with tables and images. Cell 0,0 Cell 1,1 Cell 2,2 Results Inline image placeholder: This has inline simulated image. End of report."
+  ],
+  "has_blank_pages": false,
+  "worker_result": {
+    "job_id": "0ad633970b554e4a9c05c6f92a288454",
+    "status": "succeeded",
+    "source_docx_checksum": "ca838f75e785df75a3b203aefa329ddc717f72894083efc8de1c4edb3ce486cb",
+    "output_pdf_path": "/work/job/input.pdf",
+    "page_count": 1,
+    "page_dimensions_mm": [
+      [
+        215.9,
+        279.4
+      ]
+    ],
+    "has_blank_pages": false,
+    "error": null,
+    "worker_version": "0.1.0",
+    "duration_seconds": 3.7641
+  },
+  "image": "vtu-report-studio-renderer:doc0021",
+  "image_id": "sha256:77f3ed444ba9988d1069013acb7081a2e7e9997c120d994d4e8dcd3295d1c561",
+  "libreoffice_package_version": "4:25.2.3-2+deb13u12",
+  "base_image_digest": "sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b",
+  "security_flags": {
+    "network": "none",
+    "read_only_root": true,
+    "input_mount": "read-only",
+    "capabilities_dropped": "ALL",
+    "no_new_privileges": true,
+    "memory": "512m",
+    "cpus": 1,
+    "pids_limit": 128,
+    "private_tmpfs": "64m"
+  }
+}

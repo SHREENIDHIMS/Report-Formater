@@ -1,0 +1,201 @@
+schema_version: 1
+template_id: vtu-be-btech-final-year-project-report
+template_version: 0.1.0
+status: research-draft
+
+applicability:
+  scheme: null
+  academic_cohort: null
+  requires_confirmation: true
+  conflict_policy: ask_user_and_preserve_both_sources
+
+page_setup:
+  paper_size: A4
+  width_mm: 210
+  height_mm: 297
+  orientation: portrait
+  margins_mm:
+    left: 31.75
+    right: 25.4
+    top: 19.05
+    bottom: 19.05
+  source_status: verified_source_fact_needs_cohort_verification
+  notes:
+    - Single-sided printing is described in the source; display as print-preparation guidance.
+    - Section-specific exceptions must be verified before applying globally.
+
+paragraph_defaults:
+  body:
+    font_family: null # No universal font family established in cited VTU formatting passage.
+    font_size_pt: 12
+    alignment: justify
+    line_spacing_options: [1.5, 2.0]
+    selected_line_spacing: 1.5 # Product default only; confirm local instruction.
+    source_status: verified_source_fact_needs_cohort_verification
+
+heading_styles:
+  chapter_label:
+    font_family: null
+    font_size_pt: 16
+    alignment: null # Wording/placement needs human confirmation.
+    source_status: ambiguous_needs_confirmation
+  chapter_title:
+    font_family: null
+    font_size_pt: 18
+    alignment: center
+    source_status: verified_source_fact_needs_cohort_verification
+  section_heading:
+    font_family: null
+    font_size_pt: 16
+    alignment: left
+    source_status: verified_source_fact_needs_cohort_verification
+  subsection_heading:
+    font_family: null
+    font_size_pt: 14
+    alignment: left
+    source_status: verified_source_fact_needs_cohort_verification
+
+content_constraints:
+  abstract:
+    max_words: 100
+    enforcement: warning_until_cohort_review
+    source_status: verified_source_fact_needs_cohort_verification
+
+report_sequence:
+  - {id: cover_page, label: Cover Page, required: true}
+  - {id: inside_title_page, label: Inside Title Page, required: true}
+  - {id: certificate, label: Certificate, required: true, manual_signatures: true}
+  - {id: declaration, label: Student Declaration, required: true, manual_signatures: true}
+  - {id: acknowledgements, label: Acknowledgements, required: true}
+  - {id: abstract, label: Abstract, required: true}
+  - {id: table_of_contents, label: Table of Contents, required: true, generated: true}
+  - {id: list_of_figures, label: List of Figures, required: conditional}
+  - {id: list_of_tables, label: List of Tables, required: conditional}
+  - {id: abbreviations, label: Abbreviations and Nomenclature, required: conditional}
+  - {id: chapters, label: Main Report Chapters, required: true}
+  - {id: references, label: References, required: true}
+  - {id: appendices, label: Appendices, required: conditional}
+  - {id: supplementary_material, label: Supplementary Material, required: conditional}
+
+numbering:
+  preliminary_pages:
+    style: roman_lowercase
+    status: usually_as_stated_in_source
+    note: Confirm exact start page and whether cover is unnumbered for the cohort/template.
+  main_pages:
+    style: arabic
+    status: verified_source_fact_needs_cohort_verification
+  headings:
+    style: decimal
+    examples: ["1", "1.1", "1.1.1"]
+  figures:
+    style: chapter_based
+    example: "Figure 2.1"
+  tables:
+    style: chapter_based
+    example: "Table 3.1"
+  equations:
+    style: chapter_based_decimal
+    alignment: right
+    validation: advisory_until_omml_support
+  references:
+    style: numbered_order_of_appearance
+    in_text_example: "[3]"
+    validation: basic_sequence_only
+
+academic_integrity:
+  auto_generate_guide_signature: false
+  auto_generate_seal: false
+  auto_invent_results: false
+  auto_invent_references: false
+  auto_invent_experimental_data: false
+  auto_invent_approval_date: false
+
+rules:
+  - id: VTU-PAGE-001
+    category: page_setup
+    selector: document.sections[*].page_size
+    expected: A4
+    severity: error
+    auto_fix: safe_auto
+    source_status: verified_source_fact_needs_cohort_verification
+  - id: VTU-PAGE-002
+    category: page_setup
+    selector: document.sections[*].left_margin_mm
+    expected: 31.75
+    severity: error
+    auto_fix: preview_required
+    source_status: verified_source_fact_needs_cohort_verification
+  - id: VTU-PAGE-003
+    category: page_setup
+    selector: document.sections[*].right_margin_mm
+    expected: 25.4
+    severity: error
+    auto_fix: preview_required
+    source_status: verified_source_fact_needs_cohort_verification
+  - id: VTU-PAGE-004
+    category: page_setup
+    selector: document.sections[*].top_bottom_margin_mm
+    expected: 19.05
+    severity: error
+    auto_fix: preview_required
+    source_status: verified_source_fact_needs_cohort_verification
+  - id: VTU-TYPE-001
+    category: typography
+    selector: body_paragraphs.font_size_pt
+    expected: 12
+    severity: error
+    auto_fix: preview_required
+    source_status: verified_source_fact_needs_cohort_verification
+  - id: VTU-TYPE-002
+    category: typography
+    selector: body_paragraphs.alignment
+    expected: justify
+    severity: warning
+    auto_fix: preview_required
+    source_status: verified_source_fact_needs_cohort_verification
+  - id: VTU-TYPE-003
+    category: typography
+    selector: body_paragraphs.line_spacing
+    expected_any: [1.5, 2.0]
+    severity: warning
+    auto_fix: preview_required
+    source_status: verified_source_fact_needs_cohort_verification
+  - id: VTU-STRUCT-001
+    category: structure
+    selector: sections.abstract.word_count
+    expected_max: 100
+    severity: warning
+    auto_fix: manual_only
+    source_status: verified_source_fact_needs_cohort_verification
+  - id: VTU-STRUCT-002
+    category: structure
+    selector: document.required_sections
+    expected: report_sequence
+    severity: error
+    auto_fix: manual_only
+    source_status: suggested_sequence_needs_cohort_verification
+  - id: VTU-NUM-001
+    category: numbering
+    selector: figures.chapter_sequence
+    expected: chapter_based
+    severity: warning
+    auto_fix: preview_required
+    source_status: verified_source_fact_needs_cohort_verification
+  - id: VTU-NUM-002
+    category: numbering
+    selector: tables.chapter_sequence
+    expected: chapter_based
+    severity: warning
+    auto_fix: preview_required
+    source_status: verified_source_fact_needs_cohort_verification
+
+source_notes:
+  - id: VTU-EXAM-GUIDE
+    url: https://vtu.ac.in/en/examination-guidelines/
+    title: VTU Examination Guidelines — B.E./B.Tech. Project Report Preparation Guidelines
+    checked_date: 2026-11-25
+  - id: VTU-PROJECT-GUIDE
+    url: https://vtu.ac.in/wp-content/uploads/2025/11/00.-Guidelines-for-Project-work-.pdf
+    title: Guidelines for the final year project work
+    checked_date: 2026-11-25

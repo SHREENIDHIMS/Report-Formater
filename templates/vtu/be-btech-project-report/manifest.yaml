@@ -1,0 +1,46 @@
+schema_version: 1
+id: vtu-be-btech-final-year-project-report
+version: 0.1.0
+status: research-draft
+display_name: VTU B.E./B.Tech. Final Year Project Report (Research Draft)
+university:
+  name: Visvesvaraya Technological University
+  code: VTU
+applicability:
+  courses: [BE, BTECH]
+  scheme: null
+  academic_cohort: null
+  report_type: final_year_project
+  branches: [CSE, ISE, ECE, EEE, ME, CV, OTHER]
+  requires_user_confirmation: true
+  note: >-
+    The selected scheme/cohort and local college/department instructions must
+    be confirmed. This draft is not a universal or institution-approved format.
+source_documents:
+  - id: vtu-exam-guidelines
+    title: VTU Examination Guidelines — B.E./B.Tech. Project Report Preparation Guidelines
+    url: https://vtu.ac.in/en/examination-guidelines/
+    source_type: official_university_webpage
+    checked_date: 2026-11-25
+    used_for: [page_setup, typography, abstract, numbering, figures_tables, references]
+  - id: vtu-final-year-project-guidelines
+    title: Guidelines for the final year project work
+    url: https://vtu.ac.in/wp-content/uploads/2025/11/00.-Guidelines-for-Project-work-.pdf
+    source_type: official_university_pdf
+    checked_date: 2026-11-25
+    used_for: [suggested_report_sequence, report_front_matter]
+  - id: vtu-scheme-page
+    title: VTU B.E./B.Tech. Scheme and Syllabus
+    url: https://vtu.ac.in/en/b-e-b-tech-scheme-syllabus/
+    source_type: official_university_webpage
+    checked_date: 2026-11-25
+    used_for: [scheme_applicability_review]
+verification:
+  verified_by: null
+  verified_at: null
+  next_review_due: null
+  publication_blockers:
+    - Map the user's scheme/admission cohort to current applicable final-year project rules.
+    - Check any college/department addendum for font family, spacing and cover/certificate wording.
+    - Verify ambiguous chapter label alignment and numbering start pages.
+    - Generate and visually inspect golden DOCX/PDF outputs.
