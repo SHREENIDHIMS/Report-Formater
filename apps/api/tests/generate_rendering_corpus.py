@@ -15,8 +15,7 @@ OUT = Path(__file__).parent / "rendering_fixtures"
 W = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 FAMILY = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 ONE_PIXEL_PNG = base64.b64decode(
-    "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk"
-    "+A8AAQUBAScY42YAAAAASUVORK5CYII="
+    "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
 )
 
 

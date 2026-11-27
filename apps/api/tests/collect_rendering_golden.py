@@ -30,13 +30,25 @@ def _sha256(path: Path) -> str:
 def _run_worker(source: Path, job_dir: Path) -> dict:
     job_dir.mkdir(parents=True, exist_ok=True)
     command = [
-        "docker", "run", "--rm", "--network=none", "--read-only",
-        "--tmpfs", "/tmp:rw,nosuid,nodev,noexec,size=64m",
-        "--cap-drop=ALL", "--security-opt=no-new-privileges",
-        "--memory=512m", "--cpus=1", "--pids-limit=128",
-        "-v", f"{source.resolve()}:/input/input.docx:ro",
-        "-v", f"{job_dir.resolve()}:/work/job:rw",
-        IMAGE, "/input/input.docx", "/work/job",
+        "docker",
+        "run",
+        "--rm",
+        "--network=none",
+        "--read-only",
+        "--tmpfs",
+        "/tmp:rw,nosuid,nodev,noexec,size=64m",
+        "--cap-drop=ALL",
+        "--security-opt=no-new-privileges",
+        "--memory=512m",
+        "--cpus=1",
+        "--pids-limit=128",
+        "-v",
+        f"{source.resolve()}:/input/input.docx:ro",
+        "-v",
+        f"{job_dir.resolve()}:/work/job:rw",
+        IMAGE,
+        "/input/input.docx",
+        "/work/job",
     ]
     completed = subprocess.run(command, capture_output=True, text=True, check=False)
     if completed.returncode != 0:
@@ -70,10 +82,12 @@ def collect(source: Path) -> None:
         page_image_sha256 = []
         blank = False
         for index, page in enumerate(document, start=1):
-            dimensions.append([
-                round(page.rect.width * 25.4 / 72, 2),
-                round(page.rect.height * 25.4 / 72, 2),
-            ])
+            dimensions.append(
+                [
+                    round(page.rect.width * 25.4 / 72, 2),
+                    round(page.rect.height * 25.4 / 72, 2),
+                ]
+            )
             text = _normalize_text(page.get_text("text"))
             pages.append(text)
             is_blank = not text and not page.get_images(full=True) and not page.get_drawings()

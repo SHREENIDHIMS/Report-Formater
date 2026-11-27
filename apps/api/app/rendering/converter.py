@@ -48,10 +48,12 @@ def _inspect_pdf(pdf_path: Path) -> tuple[int, list[list[float]], bool]:
         dimensions: list[list[float]] = []
         has_blank_pages = False
         for page in document:
-            dimensions.append([
-                round(page.rect.width * 25.4 / 72, 2),
-                round(page.rect.height * 25.4 / 72, 2),
-            ])
+            dimensions.append(
+                [
+                    round(page.rect.width * 25.4 / 72, 2),
+                    round(page.rect.height * 25.4 / 72, 2),
+                ]
+            )
             is_empty = (
                 not page.get_text("text").strip()
                 and not page.get_images(full=True)
@@ -89,8 +91,8 @@ def convert_docx_to_pdf(
         package = validate_docx_package(source, max_file_bytes=MAX_INPUT_BYTES)
         if not package.valid:
             raise ValueError(f"Unsafe DOCX package: {package.errors[0]}")
-        work_dir = Path(temp_dir).resolve() if temp_dir else Path(
-            tempfile.mkdtemp(prefix=TEMP_DIR_PREFIX)
+        work_dir = (
+            Path(temp_dir).resolve() if temp_dir else Path(tempfile.mkdtemp(prefix=TEMP_DIR_PREFIX))
         )
         work_dir.mkdir(parents=True, exist_ok=True)
         input_copy = work_dir / "input.docx"
@@ -103,12 +105,23 @@ def convert_docx_to_pdf(
         result.status = ConversionStatus.PROCESSING
         completed = subprocess.run(
             [
-                libreoffice, "--headless", "--nologo", "--nodefault", "--norestore",
-                "--invisible", f"-env:UserInstallation={libreoffice_profile.as_uri()}",
-                "--convert-to", "pdf", "--outdir", str(work_dir),
+                libreoffice,
+                "--headless",
+                "--nologo",
+                "--nodefault",
+                "--norestore",
+                "--invisible",
+                f"-env:UserInstallation={libreoffice_profile.as_uri()}",
+                "--convert-to",
+                "pdf",
+                "--outdir",
+                str(work_dir),
                 str(input_copy),
             ],
-            capture_output=True, text=True, timeout=timeout_seconds, check=False,
+            capture_output=True,
+            text=True,
+            timeout=timeout_seconds,
+            check=False,
         )
         if completed.returncode != 0:
             detail = (completed.stderr or completed.stdout or "").strip()[:1000]

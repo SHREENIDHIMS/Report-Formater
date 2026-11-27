@@ -74,7 +74,11 @@ def _looks_like_path_traversal(name: str) -> bool:
     """Return True if a ZIP entry name escapes its intended directory."""
     normalized = name.replace("\\", "/")
     segments = normalized.split("/")
-    return any(seg == ".." for seg in segments) or normalized.startswith("/") or normalized.startswith("../")
+    return (
+        any(seg == ".." for seg in segments)
+        or normalized.startswith("/")
+        or normalized.startswith("../")
+    )
 
 
 def _has_macro_part(name: str) -> bool:
@@ -108,8 +112,17 @@ def validate_docx_package(
     if file_size_bytes == 0:
         errors.append("file is empty")
         return _build_result(
-            False, errors, warnings, file_size_bytes, 0, False, False, False,
-            macro_parts, path_traversal_entries, suspicious_relationships,
+            False,
+            errors,
+            warnings,
+            file_size_bytes,
+            0,
+            False,
+            False,
+            False,
+            macro_parts,
+            path_traversal_entries,
+            suspicious_relationships,
         )
     if file_size_bytes > max_file_bytes:
         errors.append(
@@ -125,8 +138,17 @@ def validate_docx_package(
     except OSError as exc:
         errors.append(f"unable to read file: {exc}")
         return _build_result(
-            False, errors, warnings, file_size_bytes, 0, False, False, False,
-            macro_parts, path_traversal_entries, suspicious_relationships,
+            False,
+            errors,
+            warnings,
+            file_size_bytes,
+            0,
+            False,
+            False,
+            False,
+            macro_parts,
+            path_traversal_entries,
+            suspicious_relationships,
         )
     if not magic_ok:
         errors.append("missing ZIP magic bytes (not a valid DOCX/OOXML package)")
@@ -181,8 +203,7 @@ def validate_docx_package(
                     suspicious_relationships = _scan_rels(rels_xml)
                     if suspicious_relationships:
                         warnings.extend(
-                            f"suspicious relationship target: {t}"
-                            for t in suspicious_relationships
+                            f"suspicious relationship target: {t}" for t in suspicious_relationships
                         )
                 except KeyError:
                     pass  # no relationships part; reported via has_document_rels
@@ -191,17 +212,20 @@ def validate_docx_package(
 
                 if total_compressed > max_compressed_bytes:
                     errors.append(
-                        f"compressed size {total_compressed} exceeds limit {max_compressed_bytes} bytes",
+                        f"compressed size {total_compressed} exceeds limit "
+                        f"{max_compressed_bytes} bytes",
                     )
                 if total_uncompressed > max_uncompressed_bytes:
                     errors.append(
-                        f"uncompressed size {total_uncompressed} exceeds limit {max_uncompressed_bytes} bytes",
+                        f"uncompressed size {total_uncompressed} exceeds limit "
+                        f"{max_uncompressed_bytes} bytes",
                     )
                 if total_compressed > 0:
                     ratio = total_uncompressed / total_compressed
                     if ratio > max_compression_ratio:
                         errors.append(
-                            f"compression ratio {ratio:.1f}:1 exceeds limit {max_compression_ratio}:1 "
+                            f"compression ratio {ratio:.1f}:1 exceeds limit "
+                            f"{max_compression_ratio}:1 "
                             "(possible zip bomb)",
                         )
         except zipfile.BadZipFile as exc:
@@ -211,9 +235,17 @@ def validate_docx_package(
 
     valid = not errors
     return _build_result(
-        valid, errors, warnings, file_size_bytes, entry_count,
-        has_content_types, has_document_part, has_document_rels,
-        macro_parts, path_traversal_entries, suspicious_relationships,
+        valid,
+        errors,
+        warnings,
+        file_size_bytes,
+        entry_count,
+        has_content_types,
+        has_document_part,
+        has_document_rels,
+        macro_parts,
+        path_traversal_entries,
+        suspicious_relationships,
     )
 
 
@@ -260,6 +292,8 @@ def _scan_rels(rels_xml: bytes) -> list[str]:
         target = rel.get("Target", "")
         target_mode = rel.get("TargetMode", "")
         lower = target.lower()
-        if target_mode == "External" or any(sub in lower for sub in SUSPICIOUS_REL_TARGET_SUBSTRINGS):
+        if target_mode == "External" or any(
+            sub in lower for sub in SUSPICIOUS_REL_TARGET_SUBSTRINGS
+        ):
             targets.append(target)
     return targets

@@ -1,5 +1,8 @@
 node_modules/
+.corepack/
+.uv-cache/
 .next/
+*.tsbuildinfo
 dist/
 build/
 coverage/
@@ -23,3 +26,4 @@ rendered/
 !apps/api/tests/rendering_fixtures/*.docx
 !apps/api/tests/rendering_golden/**/*.pdf
 !.github/**
+.hx/
