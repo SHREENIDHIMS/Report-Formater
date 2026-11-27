@@ -19,7 +19,7 @@ from apps.api.app.document_engine.importing.models import (
     TableInfo,
 )
 
-FIXTURE_DIR = Path(__file__).parent / "fixtures"
+FIXTURE_DIR = Path(__file__).parent / "rendering_fixtures"
 
 
 def _inspect(name: str) -> any:

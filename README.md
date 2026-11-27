@@ -96,13 +96,17 @@ Open `http://localhost:3000`.
 ```bash
 # API
 cd apps/api
-uv run pytest
-uv run ruff check .
+uv sync --locked --all-groups
+uv run --locked pytest
+uv run --locked ruff check .
+uv run --locked ruff format --check app tests
 uv run mypy app
 
 # Web (from repository root)
+pnpm install --frozen-lockfile
 pnpm --filter @vtu-report-studio/web lint
 pnpm --filter @vtu-report-studio/web typecheck
+pnpm --filter @vtu-report-studio/web build
 ```
 
 The commands are a starting point; the scaffold does not yet contain the complete business modules described in the PRD.

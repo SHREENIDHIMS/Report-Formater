@@ -46,9 +46,9 @@ def test_golden_pdf_matches_manifest_content_and_geometry():
                     round(page.rect.height * 25.4 / 72, 2),
                 ]
                 assert dimensions == manifest["page_dimensions_mm"][index]
-                assert _normalize(page.get_text("text")) == manifest[
-                    "normalized_text_by_page"
-                ][index]
+                assert (
+                    _normalize(page.get_text("text")) == manifest["normalized_text_by_page"][index]
+                )
                 is_blank = (
                     not _normalize(page.get_text("text"))
                     and not page.get_images(full=True)

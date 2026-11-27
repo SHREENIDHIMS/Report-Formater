@@ -27,9 +27,9 @@ def verify(source: Path, expected: dict, work: Path) -> None:
                 round(page.rect.height * 25.4 / 72, 2),
             ]
             assert dimensions == expected["page_dimensions_mm"][index], source.name
-            assert _normalize_text(page.get_text("text")) == expected[
-                "normalized_text_by_page"
-            ][index], source.name
+            assert (
+                _normalize_text(page.get_text("text")) == expected["normalized_text_by_page"][index]
+            ), source.name
             image = work / f"page-{index + 1:03d}.png"
             page.get_pixmap(matrix=fitz.Matrix(1, 1), alpha=False).save(image)
             assert _sha256(image) == expected["page_image_sha256"][index], source.name

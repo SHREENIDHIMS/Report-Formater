@@ -14,7 +14,6 @@ from typing import Any
 from zipfile import ZipFile
 
 from docx import Document
-from docx.enum.section import WD_SECTION
 from docx.oxml.ns import qn
 from lxml import etree
 
@@ -24,7 +23,6 @@ from .models import (
     HeadingInfo,
     ImageInfo,
     ImportReport,
-    PackageValidationResult,
     ParagraphInfo,
     ParagraphStyleInfo,
     SectionInfo,
@@ -41,7 +39,10 @@ OMML = "http://schemas.openxmlformats.org/officeDocument/2006/math"
 
 EMU_PER_MM = 36000.0
 
-_FIELD_NAME_RE = re.compile(r"\b(PAGE|NUMPAGES|SECTION|SECTIONPAGES|DATE|TIME|AUTHOR|TITLE|TOC|CITATION|REF)\b", re.IGNORECASE)
+_FIELD_NAME_RE = re.compile(
+    r"\b(PAGE|NUMPAGES|SECTION|SECTIONPAGES|DATE|TIME|AUTHOR|TITLE|TOC|CITATION|REF)\b",
+    re.IGNORECASE,
+)
 
 
 def _tag(local: str) -> str:
@@ -85,7 +86,12 @@ def _first_style(p) -> ParagraphStyleInfo:
                 val = p_style.get(qn("w:val"))
                 style.style_id = val or style.style_id
                 if val and val.lower() in {
-                    "heading1", "heading2", "heading3", "heading4", "heading5", "heading6",
+                    "heading1",
+                    "heading2",
+                    "heading3",
+                    "heading4",
+                    "heading5",
+                    "heading6",
                 }:
                     style.is_heading = True
                     style.heading_level = int(val.lower().replace("heading", ""))
@@ -170,7 +176,9 @@ def _load_numbering(document: Document) -> _NumberingContext:
     return ctx
 
 
-def _resolve_numbering(p, ctx: _NumberingContext) -> tuple[bool, str | None, int | None, str | None]:
+def _resolve_numbering(
+    p, ctx: _NumberingContext
+) -> tuple[bool, str | None, int | None, str | None]:
     """Return (has_numbering, num_id, level, format) for a paragraph."""
     try:
         p_pr = p._p.find(_tag("pPr"))
@@ -210,7 +218,9 @@ def _is_empty_paragraph(p) -> bool:
     return not has_any
 
 
-def _collect_paragraphs(document: Document, ctx: _NumberingContext) -> tuple[list[ParagraphInfo], dict[str, Any]]:
+def _collect_paragraphs(
+    document: Document, ctx: _NumberingContext
+) -> tuple[list[ParagraphInfo], dict[str, Any]]:
     paragraphs: list[ParagraphInfo] = []
     total_runs = 0
     heading_count = 0
@@ -448,7 +458,7 @@ def _twips_to_mm(twips: int | None) -> float | None:
 
 
 def _collect_sections(document: Document) -> list[SectionInfo]:
-    from docx.enum.section import WD_SECTION as WD_SCT
+
     sections: list[SectionInfo] = []
     for index, section in enumerate(document.sections):
         try:
@@ -486,14 +496,30 @@ def _collect_sections(document: Document) -> list[SectionInfo]:
                 page_height_emu=height_emu,
                 page_width_mm=_emu_to_mm(width_emu),
                 page_height_mm=_emu_to_mm(height_emu),
-                margin_top_twips=int(section.top_margin) if section.top_margin is not None else None,
-                margin_bottom_twips=int(section.bottom_margin) if section.bottom_margin is not None else None,
-                margin_left_twips=int(section.left_margin) if section.left_margin is not None else None,
-                margin_right_twips=int(section.right_margin) if section.right_margin is not None else None,
-                margin_top_mm=_twips_to_mm(int(section.top_margin)) if section.top_margin is not None else None,
-                margin_bottom_mm=_twips_to_mm(int(section.bottom_margin)) if section.bottom_margin is not None else None,
-                margin_left_mm=_twips_to_mm(int(section.left_margin)) if section.left_margin is not None else None,
-                margin_right_mm=_twips_to_mm(int(section.right_margin)) if section.right_margin is not None else None,
+                margin_top_twips=int(section.top_margin)
+                if section.top_margin is not None
+                else None,
+                margin_bottom_twips=int(section.bottom_margin)
+                if section.bottom_margin is not None
+                else None,
+                margin_left_twips=int(section.left_margin)
+                if section.left_margin is not None
+                else None,
+                margin_right_twips=int(section.right_margin)
+                if section.right_margin is not None
+                else None,
+                margin_top_mm=_twips_to_mm(int(section.top_margin))
+                if section.top_margin is not None
+                else None,
+                margin_bottom_mm=_twips_to_mm(int(section.bottom_margin))
+                if section.bottom_margin is not None
+                else None,
+                margin_left_mm=_twips_to_mm(int(section.left_margin))
+                if section.left_margin is not None
+                else None,
+                margin_right_mm=_twips_to_mm(int(section.right_margin))
+                if section.right_margin is not None
+                else None,
                 title_pg=bool(section.different_first_page_header_footer),
             )
             for attr, field in (
@@ -526,7 +552,7 @@ def _collect_headers_footers(document: Document) -> list[HeaderFooterInfo]:
         ("evenPage", "even_page_footer"),
     ]
     for hf_type, attr in type_order:
-        for section_index, section in enumerate(document.sections):
+        for section in document.sections:
             try:
                 hf = getattr(section, attr, None)
                 if hf is None:
@@ -595,7 +621,11 @@ def _detect_unsupported_elements(document: Document) -> tuple[list[str], list[st
             found.add("equations_omml")
         if _tag("pict") in local_names:
             found.add("legacy_pictures_pict")
-        if _tag("embeddedObj") in local_names or _tag("link") in local_names or _tag("ooxml") in local_names:
+        if (
+            _tag("embeddedObj") in local_names
+            or _tag("link") in local_names
+            or _tag("ooxml") in local_names
+        ):
             found.add("embedded_objects")
         if _tag("hyperlink") in local_names:
             found.add("hyperlinks")
@@ -611,8 +641,12 @@ def _detect_unsupported_elements(document: Document) -> tuple[list[str], list[st
 
     for section in document.sections:
         for attr in (
-            "header", "footer", "first_page_header", "first_page_footer",
-            "even_page_header", "even_page_footer",
+            "header",
+            "footer",
+            "first_page_header",
+            "first_page_footer",
+            "even_page_header",
+            "even_page_footer",
         ):
             hf = getattr(section, attr, None)
             if hf is None:
@@ -650,7 +684,10 @@ def _classify_features(
             feature="headings / heading hierarchy",
             count=len(headings),
             support=SupportLevel.SUPPORTED if headings else SupportLevel.PRESERVED_NOT_EDITABLE,
-            notes="Detected via paragraph style (Heading N); custom heading styles resolved from pPr/pStyle.",
+            notes=(
+                "Detected via paragraph style (Heading N); custom heading styles "
+                "resolved from pPr/pStyle."
+            ),
             locations=[f"level {h.level} at paragraph {h.index}" for h in headings[:10]],
         )
     )
@@ -659,7 +696,7 @@ def _classify_features(
             feature="lists / numbering",
             count=sum(1 for p in paragraphs if p.has_numbering),
             support=SupportLevel.SUPPORTED,
-            notes="numId/ilvl resolved against word/numbering.xml; format (decimal/bullet) inferred.",
+            notes="Numbering resolved from word/numbering.xml; decimal/bullet format inferred.",
             locations=[f"paragraph {p.index}" for p in paragraphs if p.has_numbering][:10],
         )
     )
@@ -668,7 +705,10 @@ def _classify_features(
             feature="tables",
             count=len(tables),
             support=SupportLevel.SUPPORTED,
-            notes="Simple tables supported; merged cells and nested tables preserved but flagged for review.",
+            notes=(
+                "Simple tables supported; merged cells and nested tables preserved "
+                "but flagged for review."
+            ),
             locations=[f"table {t.index}" for t in tables],
         )
     )
@@ -715,7 +755,10 @@ def _classify_features(
             feature="sections / page setup",
             count=len(sections),
             support=SupportLevel.SUPPORTED,
-            notes="Page size, orientation and margins read from sectPr; single-section docs are simplest to reformat.",
+            notes=(
+                "Page size, orientation and margins read from sectPr; "
+                "single-section docs are simplest to reformat."
+            ),
             locations=[f"section {s.index}" for s in sections],
         )
     )
@@ -725,7 +768,10 @@ def _classify_features(
                 feature="multiple sections / section breaks",
                 count=len(sections),
                 support=SupportLevel.WARN_LIMITED,
-                notes="Multiple orientations/margins supported for inspection; automatic re-layout across sections requires manual review.",
+                notes=(
+                    "Multiple orientations/margins supported for inspection; "
+                    "automatic re-layout across sections requires manual review."
+                ),
                 locations=[f"section {s.index} ({s.type})" for s in sections],
             )
         )
@@ -735,7 +781,10 @@ def _classify_features(
             feature="headers and footers",
             count=len(headers_footers),
             support=SupportLevel.SUPPORTED,
-            notes="Paragraphs and page fields detected; linked-to-previous footers skipped to avoid duplicates.",
+            notes=(
+                "Paragraphs and page fields detected; linked-to-previous footers "
+                "skipped to avoid duplicates."
+            ),
             locations=[f"{h.type}" for h in headers_footers],
         )
     )
@@ -862,7 +911,8 @@ def inspect_docx(path: str | Path) -> ImportReport:
         )
     if report.total_sections > 1:
         report.warnings.append(
-            "Multiple sections detected; page setup varies across the document. Review before applying a single template."
+            "Multiple sections detected; page setup varies across the document. "
+            "Review before applying a single template."
         )
     if any(i.is_floating for i in report.images):
         report.warnings.append(
